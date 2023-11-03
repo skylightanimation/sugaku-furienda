@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width,initial-scale=1.0">
+    <link rel="icon" href="<%= BASE_URL %>favicon.ico">
+    <title><%= htmlWebpackPlugin.options.title %></title>
+    <meta name="Description" content="Simple Calculator App with PWA" />
+    <meta name="theme-color" content="#4b5efc" />
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <meta name="apple-mobile-web-app-status-bar-style" content="default" />
+    <meta name="apple-mobile-web-app-title" content="Sugaku Furienda" />
+    <link rel="apple-touch-icon" href="/assets/logo_x512.png" />
+    <meta name="msapplication-TileImage" content="/assets/logo_x512.png" />
+    <meta name="msapplication-TileColor" content="#000000" />
+    <link rel="manifest" href="/manifest.json">
+  </head>
+  <body>
+    <noscript>
+      <strong>We're sorry but <%= htmlWebpackPlugin.options.title %> doesn't work properly without JavaScript enabled. Please enable it to continue.</strong>
+    </noscript>
+    <div id="app"></div>
+    <!-- built files will be auto injected -->
+  </body>
+
+  <script>
+    // if ('serviceWorker' in navigator) {
+    //   window.addEventListener('load', () => {
+    //     navigator.serviceWorker.register('sw.js');
+    //   });
+    // }
+    console.log("Hello");
+        if ('serviceWorker' in navigator) {
+          navigator.serviceWorker.register('/sw.js')
+          // navigator.serviceWorker.register('/service-worker.js')
+            .then(function () {
+              console.log('Service Worker Registered');
+            });
+        }
+
+  </script>
+</html>
